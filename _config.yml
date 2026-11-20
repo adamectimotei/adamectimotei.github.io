@@ -1,0 +1,33 @@
+# Site settings. Change title, description and about.md to taste.
+title: adamectimotei
+description: >-
+  Notes on penetration testing, AI, and keeping client data safe.
+author: adamectimotei
+url: "https://adamectimotei.github.io"
+baseurl: ""
+
+# Shown as icons in the footer by the minima theme.
+github_username: adamectimotei
+# linkedin_username: your-linkedin-handle
+
+# minima is built into GitHub Pages, so no build setup is needed.
+theme: minima
+plugins:
+  - jekyll-feed      # RSS feed at /feed.xml
+  - jekyll-seo-tag   # page titles, descriptions, link previews
+  - jekyll-sitemap   # sitemap.xml for search engines
+
+header_pages:
+  - about.md
+
+permalink: /:year/:month/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
