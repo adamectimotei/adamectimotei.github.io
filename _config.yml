@@ -1,24 +1,49 @@
-# Site settings. Change title, description and about.md to taste.
-title: adamectimotei
+# ------------------------------------------------------------------
+# Site identity
+# ------------------------------------------------------------------
+title: Timotei Adamec
+tagline: Notes from security research
 description: >-
-  Notes on penetration testing, AI, and keeping client data safe.
-author: adamectimotei
+  Penetration tester and security researcher. Notes on research,
+  the tools I build for engagements, and what I learn along the way.
+author:
+  name: Timotei Adamec
+  github: adamectimotei
+  linkedin: timotei-adamec
+
+# Used by jekyll-seo-tag for search engines and link previews.
+social:
+  name: Timotei Adamec
+  links:
+    - https://github.com/adamectimotei
+    - https://www.linkedin.com/in/timotei-adamec/
+
 url: "https://adamectimotei.github.io"
 baseurl: ""
+lang: en
 
-# Shown as icons in the footer by the minima theme.
-github_username: adamectimotei
-# linkedin_username: your-linkedin-handle
+# Navigation shown in the header, in this order.
+nav:
+  - title: Writing
+    url: /
 
-# minima is built into GitHub Pages, so no build setup is needed.
-theme: minima
+# Post series. A post joins a series with `series: masking` in its
+# front matter and its position with `part: 1`.
+series:
+  masking:
+    title: Masking pentest data for AI
+    description: >-
+      How to detect and mask client data in pentest traffic before it
+      reaches an AI provider, layer by layer.
+
+# ------------------------------------------------------------------
+# Build
+# ------------------------------------------------------------------
+# No theme: the layouts, includes and CSS in this repository are the
+# whole design. All plugins below are built into GitHub Pages.
 plugins:
-  - jekyll-feed      # RSS feed at /feed.xml
-  - jekyll-seo-tag   # page titles, descriptions, link previews
+  - jekyll-seo-tag   # titles, descriptions, link previews
   - jekyll-sitemap   # sitemap.xml for search engines
-
-header_pages:
-  - about.md
 
 permalink: /:year/:month/:title/
 
@@ -26,6 +51,20 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: drafts
+    values:
+      layout: post
 
 exclude:
   - README.md
